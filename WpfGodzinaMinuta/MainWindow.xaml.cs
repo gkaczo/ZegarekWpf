@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Xceed.Wpf.Toolkit;
+
 namespace WpfGodzinaMinuta
 {
     /// <summary>
@@ -23,6 +25,22 @@ namespace WpfGodzinaMinuta
         public MainWindow()
         {
             InitializeComponent();
+            txtBoxMasked.Text = DateTime.Now.ToShortTimeString();
+           
         }
+
+        private void btnOblicz_Click(object sender, RoutedEventArgs e)
+        {
+
+            DateTime dt = new DateTime();
+            if (DateTime.TryParse(txtBoxMasked.Text, out dt) == true)
+            {
+                GodzinaMinuta gm = new GodzinaMinuta(dt.Hour, dt.Minute);
+               
+                lblWynikStopnie.Content = gm.KatStopnie.ToString() + " stopni";
+                lblWynikRadiany.Content = gm.KatRadiany.ToString() + " rad";
+            }
+        }
+
     }
 }

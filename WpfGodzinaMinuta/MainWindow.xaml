@@ -3,10 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:WpfGodzinaMinuta"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="306" Width="527">
+    <Grid Margin="0,0,22,27">
+        <xctk:MaskedTextBox Name="txtBoxMasked" Mask="##:##" HorizontalAlignment="Center" Height="22" Margin="174,64,203,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.579,0.652" />
+        <Label Content="Podaj godzine" HorizontalAlignment="Left" Margin="72,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.171,-0.462"/>
+        <Label Name="lblWynikStopnie"  Content="" HorizontalAlignment="Left" Margin="72,148,0,0" VerticalAlignment="Top" BorderThickness="1" Width="100" BorderBrush="Black"/>
+        <Button Name="btnOblicz"  Content="Oblicz kąt" HorizontalAlignment="Left" Margin="218,106,0,0" VerticalAlignment="Top" Width="76" Click="btnOblicz_Click" />
+        <Label x:Name="lblWynikRadiany"  Content="" HorizontalAlignment="Left" Margin="72,181,0,0" VerticalAlignment="Top" BorderThickness="1" Width="100" BorderBrush="Black"/>
+
+
     </Grid>
 </Window>
